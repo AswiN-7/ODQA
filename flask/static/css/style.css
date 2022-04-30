@@ -1,0 +1,379 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,500&display=swap');
+
+/*==================== VARIABLES CSS ====================*/
+:root {
+    --header-height: ;
+
+    /*========== Colors ==========*/
+    /* Change favorite color */
+    --hue-color: 340; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+
+    /* HSL color mode */
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-second: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color: hsl(var(--hue-color), 70%, 96%);
+    --body-color: hsl(var(--hue-color), 60%, 99%);
+    --container-color: #fff;
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== Margins Bottom ==========*/
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/*========== Variables Dark theme ==========*/
+body.dark-theme{
+     /* HSL color mode */
+     --first-color-second: hsl(var(--hue-color), 30%, 8%);
+     --title-color: hsl(var(--hue-color), 8%, 95%);
+     --text-color: hsl(var(--hue-color), 8%, 75%);
+     --input-color: hsl(var(--hue-color), 29%, 16%);
+     --body-color: hsl(var(--hue-color), 28%, 12%);
+     --container-color: hsl(var(--hue-color), 29%, 16%);
+}
+
+/*========== Button Dark/Light ==========*/
+.nav_btns{
+
+    /* display: flex; */
+    /* align-items: center;   */
+    /* text-align: center;   */
+    padding: 4px;
+}
+
+.change-theme{
+    font-size: 1.2rem;
+    color: var(--title-color);
+    margin-right: var(--mb-1);
+    cursor: pointer;
+}
+
+.change-theme:hover{
+    color: var(--first-color);
+}
+
+/*==================== BASE ====================*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0 0 var(--header-height) 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+h1,h2,h3,h4{
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+image{
+    max-width: 100%;
+    height: auto;
+}
+/*==================== REUSABLE CSS CLASSES ====================*/
+.section{
+    padding: 2rem 0 4rem;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.section__title{
+    font-size: var(--h1-font-size);
+}
+
+.section__subtitle{
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-3);
+    
+}
+
+ .section__title, .section__subtitle{
+    text-align: center;
+} 
+
+.qa__content{
+    background-color: var(--input-color);
+    border-radius: .5rem;
+    padding: .75rem 1rem .25rem;
+}
+.qa__label{
+    font-size: var(--smaller-font-size);
+    color: var(--title-color);
+}
+
+.qa__input{
+    width: 100%;
+    background-color: var(--input-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    border: none;
+    outline: none;
+    padding: .25rem .5rem .5rem 0;
+}
+
+.submit__btn{
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.instruction-hide{
+    display: none;
+}
+.instruction-show{
+    display: flex;
+    flex-direction: column;
+    transform: perspective(500px);
+    transition: width 20s;
+}
+.instrustion{
+    padding: 5px;
+    text-align: center;
+}
+/*==================== course ====================*/
+.grp-course{
+    display: flex;
+    justify-content: space-around;
+    transition-delay: 5s;
+}
+.grp-streams{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.grp-semaster{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+.course__element{
+    padding: 15px;
+    font-size: var(--big-font-size);
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+    cursor: pointer;
+}
+.selected{
+    background-color: var(--first-color-lighter);
+    /* border-radius: 50px 20px; */
+    border-radius: 10px 100px / 120px;
+    border-radius: 112px 84px 56px 28px/28px 56px 84px 112px;
+}
+
+.stream__element{
+    padding: 10px;
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+    cursor: pointer;
+}
+
+.semaster__element{
+    padding: 10px;
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+    cursor: pointer;
+}
+.result__element{
+    text-align: center;
+    padding: 5px;
+}
+/*==================== items ====================*/
+.items{
+    padding: .5rem;
+    /* width: 400px; */
+    display: flex;
+    flex-direction: row ;
+    align-items: center;
+    justify-content: space-between;
+}
+.flag{
+    padding: 5px;
+    margin: 3px;
+    background-color: red;
+    font-size: var(--h2-font-size);
+}
+/*==================== LAYOUT ====================*/
+
+.container{
+    max-width: 768px;
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+}
+
+.grid{
+    display: grid;
+    width: 80%;
+    gap: 1.5rem;
+}
+
+.header{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--body-color);
+}
+.subject__name{
+    width: 80%;
+}
+.subject__score{
+    width: 15%;
+    height: 50px;
+    padding: 5px;
+    text-align: center;
+    font-size: var(--h2-font-size);
+    /* border-radius: 50%; */
+    border-radius: 10% / 50%;
+}
+.subject__score:hover{
+    border-color: var(--first-color);
+}
+/*==================== BUTTONS ====================*/
+.button{
+    display: inline-block;
+    background-color: var(--first-color);
+    color: #fff;
+    padding: 1rem;
+    border-radius: .5rem;
+    font-weight: var(--font-medium);
+    text-align: center;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: var(--first-color-alt);
+}
+
+.button__icon{
+    font-size: 1.25rem;
+    margin-left: var(--mb-0-5);
+    transition: .3s;
+}
+
+.button--flex{
+    display: inline-flex;
+    align-items: center;
+}
+
+
+/*==================== MEDIA QUERIES ====================*/
+/* For small devices */
+@media screen and (max-width : 650px) {
+    .grp{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        align-content: center;
+    }
+    :root {
+        --big-font-size: 2rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: .90rem;
+        --normal-font-size: .55rem;
+        --small-font-size: .6rem;
+        --smaller-font-size: .55rem;
+    }
+}
+
+/* For medium devices */
+
+
+/* For large devices */
