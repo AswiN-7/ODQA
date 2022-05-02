@@ -1,0 +1,39 @@
+{% extends 'base.html' %} 
+{% block head %}
+<title>Question</title>
+{% endblock %} 
+{% block body %}
+<section class="section container">
+	<h2 class="section__title">Ask Question</h2>
+	<span class="section__subtitle">Tamil Open Domain Question Answering System</span>
+    {% if result %}
+        <div class="grid">
+            <div class="qa__content">
+                <label for="" class="qa__label">Question</label>
+                <textarea name="question" id="question" cols="0" rows="4" class="qa__input" >{{ result.question }}</textarea>
+            </div>
+            
+            <div class="qa__content">
+                <label for="" class="qa__label">Answer</label>
+                <textarea name="question" id="question" cols="0" rows="4" class="qa__input"   >{{ result.answer }}</textarea>
+            </div>
+
+            <div class="qa__content">
+                <label for="" class="qa__label">Context</label>
+                <textarea name="context" id="context" cols="0" rows="10" class="qa__input" >{{ result.context }}</textarea>
+            </div>
+        </div>
+    
+    {% else %}
+        <form action="/q" method="post" class="grid">
+            <div class="qa__content">
+                <label for="" class="qa__label">Question</label>
+                <textarea name="question" id="question" cols="0" rows="4" class="qa__input" ></textarea>
+            </div>
+            <div class="submit__btn">
+                <input type="submit" value="Extract Answer" class="button" />
+            </div>
+        </form>
+    {%endif%}
+</section>
+{% endblock %}

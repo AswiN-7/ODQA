@@ -1,0 +1,6 @@
+{
+    "sqlrows" : 368, 
+"milvus_rows": 0, 
+"milvus_index": 0,
+    "batch": 20
+}

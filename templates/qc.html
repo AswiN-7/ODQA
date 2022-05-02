@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+    <title>Question</title>
+{% endblock %}
+
+{% block body %} 
+<section class="section container" > 
+    <h2 class="section__title">Ask Question</h2>
+    <span class="section__subtitle">Tamil Open Domain Question Answering System</span>
+
+    <!-- {% if result %}
+        <h1>{{ result }}</h1>
+    {% endif %} -->
+    <form action="/qc" method="post" class="grid">
+        <div class="qa__content">
+            <label for="" class="qa__label">Context</label>
+            {% if result %}
+            <textarea name="context" id="context" cols="0" rows="10" class="qa__input" >{{ result.context }}</textarea>
+            {%else%}
+            <textarea name="context" id="context" cols="0" rows="10" class="qa__input" ></textarea>
+            {% endif %}
+        </div>
+
+        <div class="qa__content">
+            <label for="" class="qa__label">Question</label>
+            {% if result %}
+                <textarea name="question" id="question" cols="0" rows="4" class="qa__input" >{{ result.question }}</textarea>
+            {%else%}
+                <textarea name="question" id="question" cols="0" rows="4" class="qa__input" ></textarea>
+            {% endif %}
+
+        </div>
+        {% if result %}
+        <div class="qa__content">
+            <label for="" class="qa__label">Answer</label>
+            <textarea name="question" id="question" cols="0" rows="4" class="qa__input"   >{{ result.answer }}</textarea>
+        </div>
+        <!-- {% for answer in result.answer %}
+            <div class="qa__content">
+                <label for="" class="qa__label">Answer</label>
+                <textarea name="question" id="question" cols="0" rows="4" class="qa__input"   >{{ answer }}</textarea>
+            </div>
+        {% endfor %} -->
+
+        {% endif %}
+        <!-- Context : <input type="textarea" name="context" id="context">
+        <br>
+        Question : <input type="text" name="question" id="question">
+        <br> -->
+        <div class="submit__btn">
+            <input type="submit" value="Extract Answer" class="button">
+        </div>
+    </form>
+</section>
+    
+    <!-- {% for post in posts: %}ss
+        <h1>{{ post.title  }}</h1>
+        <h2>{{ post.content  }}</h2>
+        <h3>{{ post.date_posted }}</h3>
+        {% if post.author %}
+            <h3>by {{ post.author }}</h3>
+        {% else %}
+            <h3>By : N/A</h3>
+        {% endif %}
+
+    {% endfor %} -->
+{% endblock %}
+
