@@ -1,6 +1,9 @@
 # ODQA
 
-encoder - Indic bert
-qa model - Roberta-Tamil
-vector database - milvus
-context database - mysql
+Encoder - Indic bert
+
+QA model - Roberta-Tamil
+
+Vector database - milvus
+
+Context database - mysql
