@@ -16,7 +16,9 @@ def mean_pooling(model_output, attention_mask):
 #Encode text
 def encode(texts):
     # Tokenize sentences
-    encoded_input = tokenizer(texts, padding=True, truncation=True, return_tensors='pt', max_length=512)
+    doc_stride = 128
+    encoded_input = tokenizer(texts, padding=True, truncation=True, return_tensors='pt', max_length=512, stride=doc_stride, return_overflowing_tokens = True)
+    encoded_input.pop("overflow_to_sample_mapping")
 
     # Compute token embeddings
     with torch.no_grad():

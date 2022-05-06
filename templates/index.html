@@ -6,5 +6,8 @@
 
 {% block body %} 
     <h1>Open Domain Question Answering System</h1>
+    {% if result %}
+        <h2>{{ result }}</h2>
+    {% endif %}
 {% endblock %}
 

@@ -55,15 +55,19 @@ def qc():
         QA_input['answer'] = res
         return render_template('qc.html', result = QA_input)
 
+# @app.route('/push_mysql_to_milvus')
+# def push_mysql_to_milvus():
+#     res = ODQA_utils.odqa_milvus.push_context_to_milvus()
+#     return redirect('/', result = res)
+
 
 @app.route('/sampleqa')
 def sample_qa():
     fp = r"dataset/tamilqa.json"
     file = open(fp, encoding="utf8")
     qas = json.loads(file.read())
-    # print(qas[0])
     return render_template("sampleqa.html", results = qas[:10])
 
 if __name__ == '__main__':
     app.debug = True
-    app.run()
+    app.run(host="10.6.8.16")

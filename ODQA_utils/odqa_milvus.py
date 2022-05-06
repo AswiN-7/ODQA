@@ -44,8 +44,8 @@ def find_similar(emb):
 
 
 def push_context_to_milvus():
-
-    db_fp = r"database_handler.json"
+    print("\n\n")
+    db_fp = r"ODQA_utils\database_handler.json"
     file = open(db_fp)
     database_handler = json.loads(file.read())
     file.close()
@@ -59,8 +59,14 @@ def push_context_to_milvus():
 
     for id, context in res:
         emb = odqa_encoder.encode(context)
-        collection.insert([[index], [id], emb])
-        index+=1  
+        indexs = []
+        ids = []
+        for i in range(len(emb)):
+            indexs.append(index)
+            index+=1  
+            ids.append(id)
+        # print(emb, indexs, ids)
+        collection.insert([indexs, ids, emb])
            
     database_handler['milvus_rows'] = end
     database_handler['milvus_index'] = index
