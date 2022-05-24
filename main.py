@@ -21,7 +21,7 @@ def retrieve_context_and_answer():
         return render_template('q.html', result = result)
     else:
         question = request.form['question']
-        question_emb = ODQA_utils.odqa_encoder.encode(question)
+        question_emb = ODQA_utils.odqa_milvus.odqa_encoder.encode(question)
         similar_ids = ODQA_utils.odqa_milvus.find_similar(question_emb)
         sim_ids = similar_ids[0].ids
         print(sim_ids)
@@ -70,4 +70,4 @@ def sample_qa():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host="10.6.8.16")
+    app.run()

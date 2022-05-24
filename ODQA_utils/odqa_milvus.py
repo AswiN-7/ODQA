@@ -16,7 +16,7 @@ def create_mqa():
 
     field1 = FieldSchema(name="ind", dtype=DataType.INT64, descrition="int64", is_primary=True)
     field2 = FieldSchema(name="id", dtype=DataType.INT64, descrition="int64", is_primary=False)
-    field3 = FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, descrition="float vector",dim=768, is_primary=False)
+    field3 = FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, descrition="float vector",dim=1024, is_primary=False)
     schema = CollectionSchema(fields=[field1, field2, field3], description="collection description")
     collection = Collection(name=TABLE_NAME, schema=schema)
     
@@ -38,6 +38,7 @@ def find_similar(emb):
 	param=search_params, 
 	limit=10, 
 	expr=None,
+	output_fields = ["id"],
 	consistency_level="Strong"
 )
 
