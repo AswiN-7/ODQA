@@ -1,1 +1,1 @@
-{"info" : "index should start from 1" , "sqlrows": 368, "milvus_rows": 10, "milvus_index": 1, "batch": 10}
+{"info": "index should start from 1", "sqlrows": 368, "milvus_rows": 0, "milvus_index": 1, "batch": 10}

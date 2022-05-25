@@ -1,6 +1,6 @@
 import ODQA_utils.odqa_milvus
-import ODQA_utils.odqa_encoder
-import ODQA_utils.odqa_mysql
+# import ODQA_utils.odqa_encoder
+# import ODQA_utils.odqa_mysql
 from ODQA_utils.odqa_answer_extractor import answer_extract
 
 from flask import Flask, render_template, request, redirect, send_from_directory 
@@ -25,7 +25,7 @@ def retrieve_context_and_answer():
         similar_ids = ODQA_utils.odqa_milvus.find_similar(question_emb)
         sim_ids = similar_ids[0].ids
         print(sim_ids)
-        retrieved_context = ODQA_utils.odqa_mysql.extract_context(sim_ids[0])[0]
+        retrieved_context = ODQA_utils.odqa_milvus.odqa_mysql.extract_context(sim_ids[0])[0]
         print(retrieved_context)
         QA_input = {
             "context" : retrieved_context, 
@@ -63,11 +63,12 @@ def qc():
 
 @app.route('/sampleqa')
 def sample_qa():
-    fp = r"dataset/tamilqa.json"
+    fp = r"dataset/created_tqa.json"
     file = open(fp, encoding="utf8")
     qas = json.loads(file.read())
-    return render_template("sampleqa.html", results = qas[:10])
+
+    return render_template("sampleqa.html", results = qas[:30])
 
 if __name__ == '__main__':
     app.debug = True
-    app.run()
+    app.run(host='10.6.8.18')

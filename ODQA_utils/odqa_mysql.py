@@ -1,7 +1,7 @@
 import pymysql
 conn = pymysql.connect(host='localhost', user='aswin', port=3306, password='Mysql@123', database='ODQA',local_infile=True)
 cursor = conn.cursor()
-print("odqa")
+print("mysql connection established")
 # print("this is imp")
 TABLE_NAME = 'QA_DATASET'
 

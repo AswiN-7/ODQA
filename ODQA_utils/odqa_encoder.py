@@ -5,7 +5,7 @@ from transformers import AutoModel, AutoTokenizer
 from sentence_transformers import SentenceTransformer
 
 model = SentenceTransformer("AswiN037/sentence-t-roberta-large-wechsel-tamil")
-
+print("Retriever model loaded")
 
 
 def encode(text):

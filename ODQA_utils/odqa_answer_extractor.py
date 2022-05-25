@@ -4,5 +4,5 @@ from transformers import  pipeline
 model_name = "AswiN037/xlm-roberta-squad-tamil"
 
 answer_extract = pipeline('question-answering', model=model_name, tokenizer=model_name)
-
+print("Reader model loaded")
 
