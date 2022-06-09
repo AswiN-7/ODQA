@@ -71,4 +71,4 @@ def sample_qa():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='10.6.8.18')
+    app.run(host='10.6.8.19')

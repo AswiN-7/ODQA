@@ -3,7 +3,11 @@ conn = pymysql.connect(host='localhost', user='aswin', port=3306, password='Mysq
 cursor = conn.cursor()
 print("mysql connection established")
 # print("this is imp")
+
+# demo
 TABLE_NAME = 'QA_DATASET'
+# wiki
+# TABLE_NAME = 'wiki_context_dataset'
 
 def create_context_table():
     #Deleting previouslny stored table for clean run
@@ -39,10 +43,6 @@ def insert_data(dataset):
     context should be array of contexts
     [con1, con2, ...]
     """
-    # q = "select count(id) from context"
-    # res = execute_query(q)
-    # current_size = res[0][0]
-    # next = current_size+1
     for data in dataset:
         sql = "INSERT INTO QA_DATASET (question, context, answer, answer_start) VALUES (%s, %s, %s, %s)"
         cursor.execute(sql, (data["question"], data["context"], data["answer"], data["answer_start"]))

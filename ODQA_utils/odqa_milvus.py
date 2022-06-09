@@ -6,7 +6,12 @@ import ODQA_utils.odqa_encoder as odqa_encoder
 
 import json
 
+# demo
 TABLE_NAME = 'question_answering'
+# wiki
+# TABLE_NAME = 'wiki_context_dataset'
+
+
 collection = None
 
 #Deleting previouslny stored table for clean run
