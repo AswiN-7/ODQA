@@ -18,5 +18,10 @@ Context database - mysql
  
  
 <img src="https://github.com/AswiN-7/ODQA/assets/60695838/76fb6eb8-8156-4fec-b04b-358a2e40ac24" width=200px height=200px>
-<br>
+
 [video explanation](https://youtu.be/-kaXhyWy22Q)
+
+
+[Open Domain Abstractive Question Answering System using Transformers.pdf](https://github.com/AswiN-7/ODQA/files/14354302/Open.Domain.Abstractive.Question.Answering.System.using.Transformers.pdf)
+
+
